@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212; /* Dark background */
+            color: #EAEAEA; /* Light text */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #1E1E1E; /* Darker background for the container */
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            text-align: center;
+            z-index: 1; /* Ensure content stays on top of the particles */
+        }
+        h1 {
+            color: #DDA0DD; /* Light purple */
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        h2 {
+            color: #DDA0DD; /* Light purple */
+            margin-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #4B0082; /* Dark purple border */
+            border-radius: 8px;
+            background-color: #2C2C2C; /* Darker background for the textarea */
+            color: #EAEAEA; /* Light text */
+            font-size: 1em;
+            resize: none;
+        }
+        button {
+            background-color: #4B0082; /* Dark purple */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 1em;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #6A0DAD; /* Lighter purple on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+        .results {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #4B0082; /* Dark purple border */
+            border-radius: 8px;
+            background-color: #2C2C2C; /* Darker background for results */
+            display: inline-block;
+            width: 100%;
+        }
+        canvas {
+            margin-top: 20px;
+            background-color: #1E1E1E; /* Darker background for the canvas */
+            border-radius: 8px;
+            border: 1px solid #4B0082; /* Dark purple border */
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #BEBEBE; /* Light gray */
+        }
+
+        /* Particle system styling */
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- Particles.js CDN -->
+</head>
+<body>
+    <div id="particles-js"></div> <!-- Particle system -->
+    
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form action="/" method="post">
+            <textarea id="text" name="text" rows="4" placeholder="Type your text here...">{{ request.form.text }}</textarea><br>
+            <button type="submit">Analyze</button>
+        </form>
+
+        {% if labels %}
+        <div class="results">
+            <h2>Sentiment Analysis Results:</h2>
+            <p><strong>Original Text:</strong> {{ text }}</p>
+            <canvas id="sentimentChart"></canvas>
+        </div>
+        <script>
+            // JavaScript for Chart.js
+            const labels = {{ labels | tojson }};
+            const scores = {{ scores | tojson }};
+            const ctx = document.getElementById('sentimentChart').getContext('2d');
+            const myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: 'Sentiment Scores',
+                        data: scores,
+                        backgroundColor: [
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(255, 206, 86, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: '#4B0082' // Dark purple grid lines
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: '#4B0082' // Dark purple grid lines
+                            }
+                        }
+                    }
+                }
+            });
+        </script>
+        {% endif %}
+        <footer>
+            &copy; 2024 @agamrampal
+        </footer>
+    </div>
+
+    <script>
+        // Particle.js Configuration for 3D particles in purple
+        particlesJS('particles-js', {
+            particles: {
+                number: {
+                    value: 80,
+                    density: {
+                        enable: true,
+                        value_area: 800
+                    }
+                },
+                color: {
+                    value: "#DDA0DD"  // Purple color for particles
+                },
+                shape: {
+                    type: "circle",
+                    stroke: {
+                        width: 0,
+                        color: "#000000"
+                    },
+                    polygon: {
+                        nb_sides: 6
+                    }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 1,
+                        opacity_min: 0.1,
+                        sync: false
+                    }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: {
+                        enable: true,
+                        speed: 40,
+                        size_min: 0.1,
+                        sync: false
+                    }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#DDA0DD",  // Purple lines between particles
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: "none",
+                    random: false,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false,
+                    attract: {
+                        enable: false
+                    }
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse"
+                    },
+                    onclick: {
+                        enable: true,
+                        mode: "push"
+                    }
+                },
+                modes: {
+                    repulse: {
+                        distance: 100,
+                        duration: 0.4
+                    },
+                    push: {
+                        particles_nb: 4
+                    }
+                }
+            },
+            retina_detect: true
+        });
+    </script>
+</body>
+</html>
