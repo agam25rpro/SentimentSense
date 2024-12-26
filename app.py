@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 # API Details
 API_URL = "https://api-inference.huggingface.co/models/finiteautomata/bertweet-base-sentiment-analysis"
-headers = {"Authorization": "Bearer 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"}
+headers = {"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}
 
 # Function to query Hugging Face API
 def query(payload):
