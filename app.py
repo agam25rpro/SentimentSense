@@ -1,11 +1,16 @@
 from flask import Flask, render_template, request
 import requests
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 app = Flask(__name__)
 
 # API Details
 API_URL = "https://api-inference.huggingface.co/models/finiteautomata/bertweet-base-sentiment-analysis"
-headers = {"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx}
+headers = {"Authorization": f"Bearer {os.getenv('HUGGINGFACE_API_TOKEN')}"}
 
 # Function to query Hugging Face API
 def query(payload):
