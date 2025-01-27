@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #0a0a0a;
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.glass-card {
+    background: rgba(20, 20, 20, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(128, 0, 255, 0.1);
+    border: 1px solid rgba(128, 0, 255, 0.2);
+    margin-top: 2rem;
+}
+
+.info-card {
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-left: 4px solid #8000ff;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px rgba(128, 0, 255, 0.5);
+}
+
+h2 {
+    color: #a384ff;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: #a384ff;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.description {
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.sentiment-types {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.sentiment-type {
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(40, 40, 40, 0.9);
+}
+
+.sentiment-type h3 {
+    color: #a384ff;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.sentiment-type p {
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    background: rgba(30, 30, 30, 0.9);
+    border: 2px solid rgba(128, 0, 255, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    resize: vertical;
+    transition: all 0.3s ease;
+    margin-bottom: 1rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: rgba(128, 0, 255, 0.8);
+    box-shadow: 0 0 15px rgba(128, 0, 255, 0.3);
+}
+
+button {
+    background: linear-gradient(45deg, #8000ff, #a384ff);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(128, 0, 255, 0.4);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+#result {
+    margin-top: 2rem;
+    display: none;
+}
+
+.sentiment-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin: 1rem 0;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.negative { background: rgba(255, 99, 99, 0.2); color: #ff6363; }
+.neutral { background: rgba(102, 179, 255, 0.2); color: #66b3ff; }
+.positive { background: rgba(153, 255, 153, 0.2); color: #99ff99; }
+
+.loading {
+    display: none;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.loading::after {
+    content: '';
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 3px solid rgba(128, 0, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #8000ff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#plotly-chart {
+    width: 100%;
+    height: 400px;
+    margin-top: 1rem;
+}
