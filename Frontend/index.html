@@ -41,6 +41,14 @@
                 </div>
             </div>
 
+            <div class="info-card">
+                <h2>How It Works</h2>
+                <div class="description" style="margin-bottom: 0;">
+                    <p><strong>Model Architecture:</strong> At the core of Sentiment Sense is a custom Transformer-based deep learning model built entirely from scratch in PyTorch. It utilizes an embedding layer with positional encoding, followed by 4 stacked Transformer blocks, each featuring 8-head Multi-Head Attention. Finally, a classification head with global average pooling outputs the exact probabilities for Negative, Neutral, and Positive sentiments.</p>
+                    <p style="margin-top: 10px;"><strong>Data Handling & Preprocessing:</strong> Raw text is heavily cleaned before model ingestion. We eliminate URLs, hashtags, punctuation, and user tags contextually. The Natural Language Toolkit (NLTK) is then used to tokenize, lemmatize words, and remove standard stopwords. The remaining semantic tokens are mapped linearly to our custom vocabulary and padded to a fixed sequence length of 128 tokens for batched inference.</p>
+                </div>
+            </div>
+
             <textarea id="text-input" placeholder="Enter your text here for sentiment analysis..."></textarea>
             <button onclick="analyzeSentiment()">Analyze Sentiment</button>
             <div class="loading" id="loading"></div>
