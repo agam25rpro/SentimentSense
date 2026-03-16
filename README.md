@@ -1,5 +1,12 @@
 # Sentiment Sense
 
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
+
 Welcome to Sentiment Sense! This project is your ultimate tool for analyzing the sentiment of any text input. Trained on a diverse Twitter dataset, it is designed to generalize well for various kinds of text input, not just tweets. You can use it to analyze sentiment in just about any text and uncover the emotions hidden in words.
 
 ---
