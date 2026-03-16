@@ -32,6 +32,8 @@ The backend is built with FastAPI to ensure robust and rapid responses, while th
 
 ## Demo
 
+Try out the live application here: [Sentiment Sense Live Demo](https://sentiment-sensor-fe.vercel.app/)
+
 Here is a look at the deployed user interface for Sentiment Sense:
 
 ![SentimentSense Demo](./images/demo-screenshot1.png)
