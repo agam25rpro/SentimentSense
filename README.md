@@ -7,6 +7,7 @@ Welcome to Sentiment Sense! This project is your ultimate tool for analyzing the
 ## Table of Contents
 
 - [Overview](#overview)
+- [Demo](#demo)
 - [Architecture](#architecture)
   - [Frontend](#frontend)
   - [Backend](#backend)
@@ -26,6 +27,15 @@ Welcome to Sentiment Sense! This project is your ultimate tool for analyzing the
 **Sentiment Sense** is a complete full-stack web application designed to determine the sentiment behind any text input accurately. Powered by a custom Transformer-based model built entirely from scratch in PyTorch, it offers fast inference and detailed probability distributions across three key sentiments: Positive, Negative, and Neutral.
 
 The backend is built with FastAPI to ensure robust and rapid responses, while the frontend is a lightweight, responsive interface crafted with vanilla HTML, CSS, and JavaScript, ensuring a seamless user experience.
+
+---
+
+## Demo
+
+Here is a look at the deployed user interface for Sentiment Sense:
+
+![SentimentSense Demo](./images/demo-screenshot1.png)
+![SentimentSense Demo](./images/demo-screenshot2.png)
 
 ---
 
