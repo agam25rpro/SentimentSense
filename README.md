@@ -1,10 +1,10 @@
 
 
-# Sentiment Sense 🎉
+# Sentiment Sense 
 
-Welcome to **Sentiment Sense**! 🌟 This project is your ultimate tool for analyzing the sentiment of any text input. Trained on a diverse Twitter dataset, it’s not just limited to tweets — you can use it to analyze sentiment in just about any text. Let’s dive in and uncover the emotions hidden in words! 🎨
+Welcome to **Sentiment Sense**!  This project is your ultimate tool for analyzing the sentiment of any text input. Trained on a diverse Twitter dataset, it’s not just limited to tweets — you can use it to analyze sentiment in just about any text. Let’s dive in and uncover the emotions hidden in words! 
 
-## Table of Contents 🔖
+## Table of Contents 
 
 - [Overview](#overview-)
 - [Features](#features-)
@@ -14,11 +14,11 @@ Welcome to **Sentiment Sense**! 🌟 This project is your ultimate tool for anal
 - [Contributing](#contributing-)
 - [License](#license-)
 
-## Overview 🔍
+## Overview 
 
 **Sentiment Sense** is a web application designed to determine the sentiment behind any text input. Powered by a custom Transformer-based model trained on a Twitter dataset, it offers accurate and insightful sentiment analysis. The backend is built with FastAPI and hosted on Hugging Face, while the frontend is crafted with care and deployed on Vercel.
 
-## Features ✨
+## Features 
 
 - **Versatile Sentiment Analysis**: Works for tweets, comments, reviews, or any text input.
 - **User-Friendly Interface**: Designed with simplicity and elegance for a seamless user experience.
@@ -33,7 +33,7 @@ Try out the live application here: [Sentiment Sense Live Demo](https://sentiment
 
 
 
-## Usage 🚀
+## Usage 
 
 Once both the backend and frontend servers are running:
 
@@ -41,11 +41,11 @@ Once both the backend and frontend servers are running:
 2. Enter any text you'd like to analyze — from tweets to product reviews.
 3. Hit the "Analyze" button and let **Sentiment Sense** reveal the sentiment behind the words! 🎉
 
-## Model Details 🧠
+## Model Details 
 
 At the core of **Sentiment Sense** is a custom Transformer-based model trained on a diverse Twitter dataset. It’s designed to generalize well for various kinds of text input. For a deeper dive into the model’s architecture, training process, and performance, refer to the `main.ipynb` notebook in the repository.
 
-## Contributing 🧱
+## Contributing 
 
 We welcome contributions from the community! If you'd like to enhance **Sentiment Sense**:
 
@@ -68,12 +68,12 @@ We welcome contributions from the community! If you'd like to enhance **Sentimen
    git push origin feature/YourFeatureName
    ```
 
-5. Open a Pull Request and let’s collaborate to make **Sentiment Sense** even better! 🌟
+5. Open a Pull Request and let’s collaborate to make **Sentiment Sense** even better! 
 
-## License 🔒
+## License 
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
 ---
 
-Thank you for checking out **Sentiment Sense**! We hope it brings clarity and insights to the sentiments hidden in words. Happy analyzing! 😊
+Thank you for checking out **Sentiment Sense**! We hope it brings clarity and insights to the sentiments hidden in words. Happy analyzing! 
